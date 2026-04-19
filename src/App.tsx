@@ -14,7 +14,8 @@ import Contact from './pages/Contact';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Auto-Corrections-Mechanics">
+    //<BrowserRouter basename="/Auto-Corrections-Mechanics">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
