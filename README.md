@@ -1,20 +1,101 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🚛 Auto Correction Mechanics Website
 
-# Run and deploy your AI Studio app
+This is a professional business website built for **Auto Correction Mechanics**, a 24/7 mobile truck breakdown and roadside assistance service based in Zeerust, South Africa.
 
-This contains everything you need to run your app locally.
+The website is designed to attract and convert customers who need urgent mechanical assistance, especially truck drivers and transport operators.
 
-View your app in AI Studio: https://ai.studio/apps/b4a7c8f2-611c-41d5-9750-6eeda74e1654
+---
 
-## Run Locally
+## 🌐 Project Overview
 
-**Prerequisites:**  Node.js
+Auto Correction Mechanics specializes in:
 
+* 24/7 Breakdown Assistance
+* Mobile Mechanical Repairs
+* Truck & Heavy Vehicle Repairs
+* Tyre Repair & Replacement
+* Roadside Assistance
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+This website was built to:
+
+* Increase online visibility
+* Generate more customer calls
+* Clearly communicate services and service areas
+* Provide fast access to contact via mobile devices
+
+---
+
+## 📍 Service Areas
+
+* Zeerust (Base)
+* Mafikeng
+* Lichtenburg
+* Coligny
+* Vryburg
+* Ramatlabama Border
+* Skilpadhek Border
+* Kopfontein Border
+* Swartruggens
+* Rustenburg
+
+---
+
+## ⚙️ Features
+
+* Mobile-first responsive design
+* Click-to-call functionality
+* Clear service breakdown
+* Emergency-focused layout
+* Fast loading and simple navigation
+* SEO-friendly structure for local search
+
+---
+
+## 🧠 Business Impact
+
+The website is designed as a **lead generation tool**, helping the business:
+
+* Capture emergency roadside traffic
+* Convert visitors into direct phone calls
+* Strengthen credibility and trust
+
+---
+
+## 🏗️ Built With
+
+* HTML
+* CSS
+* Typescript
+* AI-assisted design tools (Google Stitch & AI Studio)
+
+---
+
+## 👨‍💻 Developed By
+
+**Plug Connect Solutions**
+Providing digital solutions for small businesses, including:
+
+* Website Development
+* Business Automation
+* Online Presence Setup
+
+---
+
+## 📞 Business Contact
+
+**Auto Correction Mechanics**
+📍 Zeerust, South Africa
+📞 067 947 0553
+🕒 24/7 Availability
+
+---
+
+## 🚀 Deployment
+
+This project is deployed via GitHub and can be hosted using GitHub Pages or any preferred hosting platform.
+
+---
+
+## 📌 Note
+
+This website is tailored specifically for a mobile roadside assistance business and is optimized for high conversion, particularly for urgent service requests.
