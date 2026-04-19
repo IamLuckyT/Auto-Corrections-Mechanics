@@ -38,7 +38,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      <section className="pb-32">
+      <section className="pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Featured Sections in Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-24">
@@ -273,7 +273,7 @@ export default function Gallery() {
           </div>
 
           {/* Roadside Section */}
-          <div className="bg-brand-on-surface rounded-md p-8 md:p-12 text-white overflow-hidden relative mb-24">
+          <div className="bg-brand-on-surface rounded-md p-8 md:p-12 text-white overflow-hidden relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <div>
                 <h2 className="text-headline-lg mb-6 uppercase">24/7 Roadside Help</h2>
