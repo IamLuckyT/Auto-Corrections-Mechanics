@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Shield, Target, Award, MapPin, Phone, Zap, Clock } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
@@ -18,15 +18,30 @@ export default function About() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="inline-block px-3 py-1 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block px-3 py-1 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
+            >
               Trusted for 10+ Years
-            </span>
-            <h1 className="text-[10vw] md:text-[8vw] font-display font-bold leading-[0.85] tracking-tighter uppercase mb-12">
+            </motion.span>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-[clamp(3.5rem,10vw,9rem)] font-display font-bold leading-[0.85] tracking-tighter uppercase mb-12"
+            >
               ABOUT <span className="text-brand-primary italic">US</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-400 leading-tight max-w-2xl">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-xl md:text-2xl text-gray-400 leading-tight max-w-2xl"
+            >
               Based in Zeerust, we are the team you call when you're in a fix. We've been helping drivers and truck owners for over 10 years across the North West.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -35,7 +50,13 @@ export default function About() {
       <section className="py-24 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 bg-white p-12 rounded-md shadow-sm">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-2 bg-white p-12 rounded-md shadow-sm"
+            >
               <h2 className="text-headline-lg mb-6 uppercase">WHAT WE STAND FOR</h2>
               <p className="text-2xl font-display font-bold text-brand-primary mb-8 leading-tight">
                 One simple goal — Get you back on the road as quickly and safely as possible.
@@ -63,9 +84,15 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-brand-on-surface text-white p-12 rounded-md relative overflow-hidden">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-brand-on-surface text-white p-12 rounded-md relative overflow-hidden"
+            >
               <div className="relative z-10">
                 <Award className="text-brand-primary mb-8" size={48} />
                 <h3 className="text-2xl font-display font-bold mb-6 uppercase">OUR EXPERIENCE</h3>
@@ -90,25 +117,21 @@ export default function About() {
               <div className="absolute -bottom-12 -right-12 opacity-10 pointer-events-none">
                 <Award size={240} />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas & Response Time */}
+      {/* Service Areas */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 rounded-md overflow-hidden shadow-sm border border-gray-100">
             <div className="lg:col-span-4 p-12 bg-brand-surface relative overflow-hidden">
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="/map_location.png" 
-                  alt="Auto Correction Mechanics Google Maps location at 1214 Krans St, Zeerust" 
+                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600" 
+                  alt="Service Area Map" 
                   className="w-full h-full object-cover opacity-20"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600";
-                  }}
                 />
               </div>
               <div className="relative z-10">
@@ -143,7 +166,7 @@ export default function About() {
             <div className="lg:col-span-8 p-12 bg-brand-primary text-white flex flex-col justify-center relative overflow-hidden">
               <div className="relative z-10">
                 <div className="flex items-end gap-2 mb-4">
-                  <span className="text-7xl md:text-9xl font-display font-bold leading-none italic">FAST</span>
+                  <span className="text-[clamp(4rem,12vw,10rem)] font-display font-bold leading-none italic">FAST</span>
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-6 uppercase tracking-tight">We Get To You Quickly</h3>
                 <p className="text-lg opacity-90 max-w-xl leading-relaxed mb-10">
@@ -158,7 +181,6 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              {/* Abstract background element */}
               <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 opacity-10">
                 <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
                   <circle cx="200" cy="200" r="180" stroke="white" strokeWidth="40" strokeDasharray="20 40" />
@@ -173,16 +195,23 @@ export default function About() {
       <section className="py-24 bg-brand-on-surface text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="aspect-video rounded-md overflow-hidden">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="aspect-video rounded-md overflow-hidden"
+            >
               <img
                 src="/img6.jpeg"
-                alt="Auto Correction Mechanics industrial workshop equipment for complex electrical and mechanical repairs"
+                alt="Auto Correction Mechanics industrial workshop equipment"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200";
+                }}
               />
-            </div>
+            </motion.div>
             <div>
-              <h2 className="text-display-lg mb-12 uppercase">GETTING THE JOB<br />DONE RIGHT</h2>
+              <h2 className="text-[clamp(2rem,5vw,4rem)] font-display font-bold mb-12 uppercase leading-none">GETTING THE JOB<br />DONE RIGHT</h2>
               <div className="space-y-12">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-12 h-12 bg-brand-primary flex items-center justify-center rounded-md">
@@ -216,7 +245,7 @@ export default function About() {
       <section className="py-24 bg-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-headline-lg mb-4 uppercase italic">STUCK ON THE ROAD?</h2>
-          <h3 className="text-display-lg text-brand-primary mb-8 uppercase">CALL US ANYTIME.</h3>
+          <h3 className="text-[clamp(2.5rem,8vw,5rem)] text-brand-primary font-display font-bold mb-8 uppercase leading-none">CALL US ANYTIME.</h3>
           <p className="text-lg text-gray-500 mb-12">
             We are always ready to help. Our mechanics are waiting for your call.
           </p>
@@ -226,7 +255,13 @@ export default function About() {
             </div>
             <div className="bg-brand-on-surface p-6 px-10 text-left">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Emergency Hotline</p>
-              <a href="tel:0679470553" className="text-3xl md:text-4xl font-display font-bold text-white hover:text-brand-primary transition-colors">067 947 0553</a>
+              <a 
+                href="tel:0679470553" 
+                aria-label="Call emergency hotline at 067 947 0553"
+                className="text-3xl md:text-4xl font-display font-bold text-white hover:text-brand-primary transition-colors"
+              >
+                067 947 0553
+              </a>
             </div>
           </div>
         </div>
