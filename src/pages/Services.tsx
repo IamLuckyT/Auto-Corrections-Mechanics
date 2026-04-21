@@ -96,7 +96,7 @@ export default function Services() {
             <div className="relative">
               <div className="h-[250px] md:h-auto md:aspect-video rounded-md overflow-hidden shadow-2xl">
                 <img
-                  src="/img5.jpeg"
+                  src="img5.jpeg"
                   alt="Auto Correction Mechanics specialized service truck equipped for mobile roadside repairs"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -165,7 +165,7 @@ export default function Services() {
             <div className="relative">
               <div className="h-[300px] md:h-auto md:aspect-square rounded-md overflow-hidden shadow-xl">
                 <img
-                  src="/img7.jpeg"
+                  src="img7.jpeg"
                   alt="Professional mechanical tools and equipment used for high quality truck maintenance"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -217,7 +217,7 @@ export default function Services() {
             >
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="/map_location.png" 
+                  src="map_location.png" 
                   alt="Google Maps location for Auto Correction Mechanics in Zeerust" 
                   className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-all duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
