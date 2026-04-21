@@ -19,10 +19,10 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Logo - Using absolute path /logo.png */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img 
-              src="logo.png" 
+              src="/logo.png" 
               alt="Auto Correction Mechanics Logo" 
               className="h-10 sm:h-12 w-auto"
               referrerPolicy="no-referrer"
