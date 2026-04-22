@@ -7,10 +7,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
 
-  // FIX: This ensures that on subpages like /about, the browser 
-  // doesn't look in the wrong place. 
-  const isHome = location.pathname === '/';
-  const logoSrc = isHome ? "logo.png" : "./logo.png";
+  // This ensures the logo always points to the correct root folder
+  const baseUrl = import.meta.env.BASE_URL;
+  const logoPath = `${baseUrl}logo.png`.replace('//', '/'); 
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -26,19 +25,19 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 sm:gap-3">
             <img 
-              src={logoSrc} 
+              src={logoPath} 
               alt="Auto Correction Mechanics Logo" 
               className="h-10 sm:h-12 w-auto"
               onError={(e) => {
-                // Emergency fallback if the above fails
+                // Last ditch effort if the built-in path fails
                 const target = e.target as HTMLImageElement;
                 if (!target.dataset.tried) {
                   target.dataset.tried = "true";
-                  target.src = "logo.png"; 
+                  target.src = "logo.png";
                 }
               }}
             />
-            <div className="flex flex-col">
+            <div className="flex flex-col text-brand-on-surface">
               <span className="font-display font-bold text-lg sm:text-xl leading-none tracking-tight">
                 AUTO <span className="text-brand-primary">CORRECTION</span>
               </span>
@@ -53,7 +52,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* ... rest of your existing Navbar code (Desktop Nav, Mobile Menu Button, etc.) ... */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -79,8 +77,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      
-      {/* Mobile Nav Logic remains the same */}
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
