@@ -7,10 +7,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
 
-  // This check ensures that if you are on a subpage (like /about), 
-  // the image source becomes "./logo.png" or handles the depth correctly.
-  // For most SPAs on a root domain, a simple check helps.
-  const logoPath = location.pathname === '/' ? 'logo.png' : './logo.png';
+  // We use a relative path that works regardless of depth
+  // The 'window.location.origin' ensures we always hit the root domain
+  const logoPath = "/logo.png"; 
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -24,19 +23,19 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+          {/* Logo - Force the link to the absolute root */}
+          <Link 
+            to="/" 
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-2 sm:gap-3 group"
+          >
             <img 
               src={logoPath} 
               alt="Auto Correction Mechanics Logo" 
-              className="h-10 sm:h-12 w-auto"
+              className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105"
               onError={(e) => {
-                // Fallback: If the relative path fails, try the absolute one as a last resort
                 const target = e.target as HTMLImageElement;
-                if (target.src.indexOf('logo.png') !== -1 && !target.dataset.tried) {
-                   target.dataset.tried = 'true';
-                   target.src = '/logo.png';
-                }
+                target.src = 'logo.png'; // Local fallback
               }}
             />
             <div className="flex flex-col">
@@ -78,6 +77,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-brand-on-surface"
+              aria-label="Toggle Menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
