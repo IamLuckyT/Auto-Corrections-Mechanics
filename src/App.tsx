@@ -17,7 +17,7 @@ export default function App() {
    <BrowserRouter basename="/Auto-Corrections-Mechanics">
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} /> {/* Using 'index' instead of path="/" is safer */}
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/gallery" element={<Gallery />} />
