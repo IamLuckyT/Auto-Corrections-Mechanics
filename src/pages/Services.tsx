@@ -4,6 +4,9 @@ import { Truck, Zap, Battery, Fuel, Settings, Wrench, Shield, Clock, MapPin, Pho
 import { motion } from 'motion/react';
 
 export default function Services() {
+  // This ensures images load correctly on GitHub Pages sub-routes
+  const baseUrl = import.meta.env.BASE_URL;
+
   const services = [
     {
       id: 'engineering',
@@ -96,7 +99,7 @@ export default function Services() {
             <div className="relative">
               <div className="h-[250px] md:h-auto md:aspect-video rounded-md overflow-hidden shadow-2xl">
                 <img
-                  src="img5.jpeg"
+                  src={`${baseUrl}img5.jpeg`}
                   alt="Auto Correction Mechanics specialized service truck equipped for mobile roadside repairs"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -152,6 +155,7 @@ export default function Services() {
               <p className="opacity-90">We are helping drivers in Zeerust & Mafikeng right now.</p>
             </div>
             <a href="tel:0679470553" className="bg-white text-brand-primary px-10 py-4 rounded-md font-display font-bold flex items-center gap-3 hover:bg-gray-100 transition-colors uppercase tracking-widest text-sm">
+              <Phone size={16} />
               Call Us Now
             </a>
           </div>
@@ -165,7 +169,7 @@ export default function Services() {
             <div className="relative">
               <div className="h-[300px] md:h-auto md:aspect-square rounded-md overflow-hidden shadow-xl">
                 <img
-                  src="img7.jpeg"
+                  src={`${baseUrl}img7.jpeg`}
                   alt="Professional mechanical tools and equipment used for high quality truck maintenance"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -210,14 +214,14 @@ export default function Services() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Auto+Correction+Mechanics+Zeerust" 
+              href="https://maps.google.com/?q=Zeerust" 
               target="_blank" 
               rel="noopener noreferrer"
               className="relative p-8 md:p-12 bg-brand-surface rounded-md border border-gray-100 group hover:border-brand-primary/30 transition-all overflow-hidden"
             >
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="map_location.png" 
+                  src={`${baseUrl}map_location.png`} 
                   alt="Google Maps location for Auto Correction Mechanics in Zeerust" 
                   className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-all duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
@@ -234,7 +238,7 @@ export default function Services() {
               </div>
             </a>
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Auto+Correction+Mechanics+Mafikeng" 
+              href="https://maps.google.com/?q=Mafikeng" 
               target="_blank" 
               rel="noopener noreferrer"
               className="relative p-8 md:p-12 bg-brand-surface rounded-md border border-gray-100 group hover:border-brand-primary/30 transition-all overflow-hidden"
@@ -255,7 +259,7 @@ export default function Services() {
               </div>
             </a>
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Auto+Correction+Mechanics+Gaborone" 
+              href="https://maps.google.com/?q=Gaborone" 
               target="_blank" 
               rel="noopener noreferrer"
               className="relative p-8 md:p-12 bg-brand-surface rounded-md border border-gray-100 group hover:border-brand-primary/30 transition-all overflow-hidden"
