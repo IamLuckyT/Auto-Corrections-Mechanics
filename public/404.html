@@ -1,24 +1,22 @@
 <!doctype html>
 <html lang="en-ZA">
   <head>
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 0; // 0 for custom domains like autocorrection.co.za
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <title>Auto Correction Mechanics | 24/7 Mobile Truck & Car Repairs Zeerust</title>
     <meta name="description" content="Auto Correction Mechanics. Precision 24/7 response team for heavy-duty breakdowns, mobile truck repairs, and electrical systems in Zeerust and surrounding North West areas." />
-    
-    <script type="text/javascript">
-      // This script takes the current path and converts it into a query string
-      // so the main index.html can read it and load the correct React route.
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1).join('/') + '/?p=' +
-        l.pathname.slice(1).split('/').slice(0).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://autocorrection.co.za/" />
