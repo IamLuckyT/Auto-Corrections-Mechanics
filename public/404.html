@@ -2,7 +2,9 @@
 <html lang="en-ZA">
   <head>
     <script type="text/javascript">
-      var pathSegmentsToKeep = 0; // 0 for custom domains like autocorrection.co.za
+    // Change this to 1 because your site is at username.github.io/repo-name/
+      var pathSegmentsToKeep = 1; 
+
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
