@@ -126,12 +126,14 @@ export default function Contact() {
                       <a href="tel:0679470553" className="text-xl md:text-2xl font-display font-bold hover:text-brand-primary transition-colors">067 947 0553</a>
                     </div>
                   </div>
+
+                  {/* Email 
                   <div className="flex gap-4 md:gap-6">
                     <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 bg-brand-surface flex items-center justify-center rounded-md text-brand-primary">
                       <Mail size={20} md:size={24} />
                     </div>
 
-                  {/* Email 
+                  
                     <div>
                       <p className="label-md text-gray-400 mb-1">Email Us</p>
                       <a href="mailto:info@autocorrection.co.za" className="text-xl md:text-2xl font-display font-bold hover:text-brand-primary transition-colors break-all">info@autocorrection.co.za</a>
